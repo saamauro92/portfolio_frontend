@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  background: rgb(42, 42, 42);
+  background: linear-gradient(
+    86deg,
+    rgba(42, 42, 42, 0.9491129215358018) 1%,
+    rgba(2, 2, 2, 1) 100%
+  );
+  color: #f5f5f5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Set your brand colors
+$primary: #7f20ff;
+$secondary: #00ffc2;
+$purple: #b57ffa;
+$orange: #ff672b;
+$yellow: #fffa08;
+$turquoise: #05ffd4;
+$grey-dark: #333333;
+$black: #101113;
+
+//navbar
+$navbar-background-color: transparent;
+
+// Update some of Bulma's component variables
+$family-primary: "Roboto Mono", monospace;
+$family-secondary: "Lexend Giga", sans-serif;
+
+// Import only what you need from Bulma
+@import "~bulma/bulma";
+
+.has-text-secondary {
+  color: $secondary;
+}
+
+/* hero */
+.hero-img {
+}

@@ -39,6 +39,8 @@ $black: #101113;
 
 //navbar
 $navbar-background-color: transparent;
+$navbar-item-hover-background-color: transparent;
+$navbar-item-active-background-color: $secondary;
 
 // Update some of Bulma's component variables
 $family-primary: "Roboto Mono", monospace;
@@ -52,5 +54,73 @@ $family-secondary: "Lexend Giga", sans-serif;
 }
 
 /* hero */
-.hero-img {
+
+.img-hero {
+  width: 250px;
+}
+
+.image-container {
+  display: inline-block;
+  position: relative;
+  line-height: 0;
+  background: #c4ba86;
+  z-index: 0;
+}
+.image-container::after {
+  content: "";
+  position: absolute;
+  width: 49%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  mix-blend-mode: lighten;
+  background: #f430a9;
+  opacity: 0.6;
+}
+.image-container > img {
+  -webkit-filter: brightness(100%) contrast(100%) grayscale(100%)
+    hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
+  filter: brightness(100%) contrast(100%) grayscale(100%) hue-rotate(0deg)
+    invert(0%) opacity(100%) saturate(100%) sepia(0%);
+  mix-blend-mode: hard-light;
+}
+
+/* img 2 */
+
+.image-container_two {
+  display: inline-block;
+  position: relative;
+  line-height: 0;
+  background: $secondary;
+
+  z-index: 1;
+}
+.image-container_two::after {
+  content: "";
+  position: absolute;
+  width: 49%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  mix-blend-mode: lighten;
+  background: #002a8c;
+  opacity: 0.6;
+}
+.image-container_two > img {
+  -webkit-filter: brightness(100%) contrast(120%) grayscale(100%)
+    hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
+  filter: brightness(100%) contrast(120%) grayscale(100%) hue-rotate(0deg)
+    invert(0%) opacity(100%) saturate(100%) sepia(0%);
+  mix-blend-mode: multiply;
+}
+
+.img-hero_fourth {
+  transform: translate3d(-1.1ch, 0.6in, 2em);
+}
+.img-hero-two {
+  transform: translate3d(-3ch, 0.6in, 2em);
+}
+.img-hero-third {
+  z-index: 2;
+  transform: translateX(55px);
 }

@@ -1,25 +1,39 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Navbar, Icon, Container as ParentContainer } from 'react-bulma-components';
-import Image from 'next/image';
+import { Navbar, Container as ParentContainer } from 'react-bulma-components';
 
-const { Brand, Container, Item, Menu, Burger } = Navbar;
+
+
+const { Brand, Container, Menu, Burger } = Navbar;
 
 const Header = () => {
 
     const [navBarStatus, setActiveNavbar] = useState(false);
     const router = useRouter();
 
-    const handleSamePageClick = () => {
-        e.preventDefault();
-        setActiveNavbar(false);
-        router.push(`${window.location.origin}/${e.target.hash}`);
-    };
 
     const handleActiveNavbar = () => {
         setActiveNavbar(!navBarStatus);
     };
+
+    const links = [{
+        name: 'Home',
+        href: '/'
+    }, {
+        name: 'Contact',
+        href: '/contact'
+    },
+    {
+        name: 'Skills',
+        href: '/skills'
+    },
+    {
+        name: 'Projects',
+        href: '/projects'
+    },
+
+    ]
 
     return (
         <>
@@ -29,52 +43,30 @@ const Header = () => {
                     <Brand >
                         <Burger className="switch-burger has-text-white" onClick={handleActiveNavbar} />
 
-
                     </Brand>
                     <Menu >
                         <Container className="is-justify-content-center is-width-100">
 
-                            <Link href="#creatures">
-                                <a className="navbar-item mx-2 has-text-weight-medium has-text-white" onClick={(e) => handleSamePageClick(e)}>
-                                    Contact
-                                </a>
-                            </Link>
-                            <Link href="/lore">
+
+                            <Link href="/" scroll={false}>
                                 <a className="navbar-item mx-2 has-text-weight-medium has-text-white" onClick={() => setActiveNavbar(false)}>
-                                    Skills
-                                </a>
-                            </Link>
-                            <Link href="/our-vision">
-                                <a className="navbar-item mx-2 has-text-weight-medium has-text-white" onClick={() => setActiveNavbar(false)}>
-                                    Projects
+                                    Mauro Saavedra
                                 </a>
                             </Link>
 
                         </Container>
                         <Container align="right">
-                            <Item target="_blank" href="">
-                                <Icon>
-                                    <i className="fab fa-github has-text-white" />
-                                </Icon>
-                            </Item>
-                            <Item target="_blank" href="https://www.linkedin.com/company/">
-                                <Icon>
-                                    <i className="fab fa-linkedin has-text-white" />
-                                </Icon>
-                            </Item>
+                            {links.map(({ name, href }) =>
+                                <Link href={href} key={name} scroll={false} onClick={() => setActiveNavbar(false)}>
 
-                            <Item target="_blank" href="https://www.instagram.com/">
-                                <Icon>
-                                    <i className="fab fa-instagram has-text-white" />
-                                </Icon>
-                            </Item>
+                                    <a className="navbar-item mx-2 has-text-weight-medium has-text-white " >
+                                        {name}
 
-                            <Item target="_blank" href="https://twitter.com/">
-                                <Icon>
-                                    <i className="fab fa-twitter has-text-white" />
-                                </Icon>
-                            </Item>
 
+
+                                    </a>
+                                </Link>
+                            )}
 
                         </Container>
                     </Menu>

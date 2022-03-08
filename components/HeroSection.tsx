@@ -14,7 +14,7 @@ const HeroSection = ({ title, subtitle = "", image }: Props): JSX.Element => {
     <>
       <Hero mt={6} className="">
         <Hero.Body>
-          <Columns className=" ">
+          <Columns className=" is-vcentered">
             <Column
               className=""
               desktop={{ size: 6 }}

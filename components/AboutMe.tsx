@@ -1,6 +1,10 @@
 import { Columns, Heading, Section } from "react-bulma-components";
 
-const AboutMe = ({ data }) => {
+interface Props {
+  data: string;
+}
+
+const AboutMe = ({ data }: Props): JSX.Element => {
   return (
     <>
       <Section className="has-text-white is-small">

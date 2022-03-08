@@ -29,7 +29,7 @@ const ProjectSection = (): JSX.Element => {
       <Section paddingless className="is-large" mt={6}>
         {mockup.map(({ name, description, image }) => (
           <Columns>
-            <Column size={5}>
+            <Column size={6}>
               <Heading subtitle className="has-text-white">
                 {" "}
                 {name}

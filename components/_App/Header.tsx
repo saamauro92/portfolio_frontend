@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
+
 import Link from "next/link";
-import { Navbar, Container as ParentContainer } from "react-bulma-components";
+import { Navbar } from "react-bulma-components";
 
 const { Brand, Container, Menu, Burger } = Navbar;
 
@@ -22,7 +22,7 @@ const links: { name: string; href: string }[] = [
 
 const Header = (): JSX.Element => {
   const [navBarStatus, setActiveNavbar] = useState(false);
-  const router = useRouter();
+  /*   const router = useRouter(); */
 
   const handleActiveNavbar = () => {
     setActiveNavbar(!navBarStatus);
@@ -30,38 +30,36 @@ const Header = (): JSX.Element => {
 
   return (
     <>
-      <Navbar className=" is-spaced  " active={navBarStatus} transparent={true}>
-        <ParentContainer>
-          <Brand>
-            <Burger
-              className="switch-burger has-text-white"
-              onClick={handleActiveNavbar}
-            />
-          </Brand>
-          <Menu>
-            <Link href="/" scroll={false}>
-              <a
-                className="navbar-item mx-2 has-text-weight-medium has-text-white"
-                onClick={() => setActiveNavbar(false)}
-              >
-                Mauro Saavedra
-              </a>
-            </Link>
+      <Navbar className=" is-spaced " active={navBarStatus} transparent={true}>
+        <Brand>
+          <Burger
+            className="switch-burger has-text-white"
+            onClick={handleActiveNavbar}
+          />
+        </Brand>
+        <Menu>
+          <Link href="/" scroll={false}>
+            <a
+              className="navbar-item mx-2 has-text-weight-medium has-text-white"
+              onClick={() => setActiveNavbar(false)}
+            >
+              Mauro Saavedra
+            </a>
+          </Link>
 
-            <Container align="right">
-              {links.map(({ name, href }) => (
-                <Link href={href} key={name} scroll={false}>
-                  <a
-                    className="navbar-item mx-2 has-text-weight-medium has-text-white "
-                    onClick={() => setActiveNavbar(false)}
-                  >
-                    {name}
-                  </a>
-                </Link>
-              ))}
-            </Container>
-          </Menu>
-        </ParentContainer>
+          <Container align="right" paddingless>
+            {links.map(({ name, href }) => (
+              <Link href={href} key={name} scroll={false}>
+                <a
+                  className="navbar-item mx-2 has-text-weight-medium has-text-white "
+                  onClick={() => setActiveNavbar(false)}
+                >
+                  {name}
+                </a>
+              </Link>
+            ))}
+          </Container>
+        </Menu>
       </Navbar>
     </>
   );

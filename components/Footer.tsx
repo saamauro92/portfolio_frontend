@@ -6,9 +6,9 @@ const FooterSection = (): JSX.Element => {
       <Container p={6}>
         <footer>
           <p></p>
-          <p className="has-text-centered has-text-white">
-            It is written using the React.js framework Next.js with Strapi CMS
-            and React Bulma Components.
+          <p className="has-text-centered has-text-white has-text-weight-light">
+            Written using the ReactJS framework NextJS with Typescript, Bulma
+            Css and Strapi as CMS. See Code.
           </p>
         </footer>
       </Container>

@@ -1,61 +1,53 @@
-/* eslint-disable @next/next/no-img-element */
-
 import { Columns, Heading, Hero } from "react-bulma-components";
 import SocialMedia from "./SocialMedia";
 
 const { Column } = Columns;
 
-const HeroSection = ({ data }): JSX.Element => {
+interface Props {
+  title: string;
+  subtitle: string;
+  image?: boolean;
+}
+
+const HeroSection = ({ title, subtitle = "", image }: Props): JSX.Element => {
   return (
     <>
       <Hero mt={6} className="">
-        <Columns centered={true}>
-          <Column
-            className=""
-            desktop={{ size: 4 }}
-            tablet={{ size: 0 }}
-            mobile={{ size: 12 }}
-            mt={6}
-            pt={6}
-          >
-            <Heading mt={6} pt={6} className="has-text-secondary   ">
-              {" "}
-              {data.attributes.title}{" "}
-            </Heading>
-            <Heading
-              mt={2}
-              subtitle
-              className="has-text-white has-text-weight-light"
+        <Hero.Body>
+          <Columns className=" ">
+            <Column
+              className=""
+              desktop={{ size: 6 }}
+              tablet={{ size: 0 }}
+              mobile={{ size: 12 }}
             >
-              {data.attributes.subtitle}
-            </Heading>
-            <SocialMedia />
-          </Column>
+              <Heading className="has-text-secondary   "> {title} </Heading>
+              <Heading
+                mt={2}
+                subtitle
+                className="has-text-white has-text-weight-light"
+              >
+                {subtitle}
+              </Heading>
+              <SocialMedia />
+            </Column>
 
-          <Column
-            className=""
-            desktop={{ size: 8 }}
-            p={6}
-            tablet={{ size: 12 }}
-            mobile={{ size: 12 }}
-          >
-            <div className="image-container is-hidden-mobile">
-              <img src="/p_bgr.png" alt="" className="img-hero" />
-            </div>
-            <div className="image-container_two img-hero-two is-hidden-mobile">
-              <img src="/p_bgr.png" alt="" className="img-hero " />
-            </div>
-            <div className="image-container img-hero-third is-hidden-mobile">
-              <img src="/p_bgr.png" alt="" className="img-hero " />
-            </div>
-            <div className="image-container_two img-hero_fourth">
-              <img src="/p_bgr.png" alt="" className="img-hero" />
-            </div>
-            <div className="image-container img-hero-third">
-              <img src="/p_bgr.png" alt="" className="img-hero " />
-            </div>
-          </Column>
-        </Columns>
+            <Column
+              className=""
+              desktop={{ size: 6 }}
+              tablet={{ size: 12 }}
+              mobile={{ size: 12 }}
+            >
+              {image ? (
+                <div className="image-container  ">
+                  <img src="/p_bgr.png" alt="" className="img-hero " />
+                </div>
+              ) : (
+                <div className="space-container "></div>
+              )}
+            </Column>
+          </Columns>
+        </Hero.Body>
       </Hero>
     </>
   );

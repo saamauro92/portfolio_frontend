@@ -15,6 +15,7 @@ body {
     rgba(42, 42, 42, 0.9491129215358018) 1%,
     rgba(2, 2, 2, 1) 100%
   );
+
   color: #f5f5f5;
 }
 
@@ -27,7 +28,6 @@ a {
   box-sizing: border-box;
 }
 
-// Set your brand colors
 $primary: #7f20ff;
 $secondary: #00ffc2;
 $purple: #b57ffa;
@@ -46,7 +46,7 @@ $navbar-item-active-background-color: $secondary;
 $family-primary: "Roboto Mono", monospace;
 $family-secondary: "Lexend Giga", sans-serif;
 
-// Import only what you need from Bulma
+// Import only what you I need from Bulma
 @import "~bulma/bulma";
 
 .has-text-secondary {
@@ -54,10 +54,6 @@ $family-secondary: "Lexend Giga", sans-serif;
 }
 
 /* hero */
-
-.img-hero {
-  width: 250px;
-}
 
 .image-container {
   display: inline-block;
@@ -85,42 +81,7 @@ $family-secondary: "Lexend Giga", sans-serif;
   mix-blend-mode: hard-light;
 }
 
-/* img 2 */
-
-.image-container_two {
-  display: inline-block;
-  position: relative;
-  line-height: 0;
-  background: $secondary;
-
-  z-index: 1;
-}
-.image-container_two::after {
-  content: "";
-  position: absolute;
-  width: 49%;
+.space-container {
+  width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  mix-blend-mode: lighten;
-  background: #002a8c;
-  opacity: 0.6;
-}
-.image-container_two > img {
-  -webkit-filter: brightness(100%) contrast(120%) grayscale(100%)
-    hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
-  filter: brightness(100%) contrast(120%) grayscale(100%) hue-rotate(0deg)
-    invert(0%) opacity(100%) saturate(100%) sepia(0%);
-  mix-blend-mode: multiply;
-}
-
-.img-hero_fourth {
-  transform: translate3d(-1.1ch, 0.6in, 2em);
-}
-.img-hero-two {
-  transform: translate3d(-3ch, 0.6in, 2em);
-}
-.img-hero-third {
-  z-index: 2;
-  transform: translateX(55px);
 }

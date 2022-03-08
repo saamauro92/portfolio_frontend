@@ -1,6 +1,6 @@
+import HeroSection from "components/HeroSection";
 import { GetStaticProps } from "next/types";
-import { Container } from "react-bulma-components";
-import PageTitles from "../components/PageTitles";
+import { Section } from "react-bulma-components";
 import ProjectSection from "../components/ProjectSection";
 import Layout from "../components/_App/Layout";
 import { fetchAPI } from "../lib/api";
@@ -8,12 +8,14 @@ import { fetchAPI } from "../lib/api";
 const Projects = (): JSX.Element => {
   return (
     <Layout>
-      <Container mb={6}>
-        <Container>
-          <PageTitles title="Projects" subtitle="Some text" />
-          <ProjectSection />
-        </Container>
-      </Container>
+      <HeroSection
+        title="Projects"
+        subtitle="A selection of projects I've worked on."
+        image={false}
+      />
+      <Section className="" mt={6}>
+        <ProjectSection />
+      </Section>
     </Layout>
   );
 };

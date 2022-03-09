@@ -26,9 +26,9 @@ const mockup: { name: string; description: string; image: string }[] = [
 const ProjectSection = (): JSX.Element => {
   return (
     <>
-      <Section paddingless className="is-large" mt={6}>
+      <Section mt={6} mb={6}>
         {mockup.map(({ name, description, image }, i) => (
-          <Columns key={i}>
+          <Columns key={i} mt={6} mb={6}>
             <Column size={6}>
               <Heading subtitle className="has-text-white">
                 {" "}

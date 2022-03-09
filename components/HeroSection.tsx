@@ -22,7 +22,16 @@ const HeroSection = ({ title, subtitle = "", image }: Props): JSX.Element => {
               tablet={{ size: 0 }}
               mobile={{ size: 12 }}
             >
-              <Heading className="has-text-secondary   "> {title} </Heading>
+              <Heading
+                className={
+                  image === true
+                    ? "has-text-secondary  "
+                    : "has-text-secondary   mt-6 pt-5"
+                }
+              >
+                {" "}
+                {title}{" "}
+              </Heading>
               <Heading
                 mt={2}
                 subtitle

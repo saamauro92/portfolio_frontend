@@ -7,8 +7,8 @@ interface Props {
 const AboutMe = ({ data }: Props): JSX.Element => {
   return (
     <>
-      <Section className="has-text-white is-small">
-        <Columns mt={6}>
+      <Section className="has-text-white is-small" mb={6}>
+        <Columns mb={6}>
           <Columns.Column size={8}>
             <Heading className="has-text-secondary"> About</Heading>
             <p className="has-text-weight-light">{data}</p>

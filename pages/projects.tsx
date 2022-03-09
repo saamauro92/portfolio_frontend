@@ -14,9 +14,7 @@ const Projects = (): JSX.Element => {
         image={false}
       />
 
-      <Section className="" mt={6}>
-        <ProjectSection />
-      </Section>
+      <ProjectSection />
     </Layout>
   );
 };

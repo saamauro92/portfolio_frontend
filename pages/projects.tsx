@@ -1,20 +1,24 @@
 import HeroSection from "components/HeroSection";
 import { GetStaticProps } from "next/types";
-import { Block, Section } from "react-bulma-components";
+import { ProjectPage, singleProjectAttributes } from "types/types";
 import ProjectSection from "../components/ProjectSection";
 import Layout from "../components/_App/Layout";
 import { fetchAPI } from "../lib/api";
 
-const Projects = (): JSX.Element => {
+interface Props {
+  hero: ProjectPage;
+  projects: singleProjectAttributes[];
+}
+
+const Projects = ({ hero, projects }: Props): JSX.Element => {
   return (
     <Layout>
       <HeroSection
-        title="Projects"
-        subtitle="A selection of projects I've worked on."
+        title={hero.attributes.title}
+        subtitle={hero.attributes.subtitle}
         image={false}
       />
-
-      <ProjectSection />
+      <ProjectSection projects={projects} />
     </Layout>
   );
 };
@@ -22,11 +26,13 @@ const Projects = (): JSX.Element => {
 export default Projects;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const landingRes = await fetchAPI("/landing", { populate: "*" });
+  const projectsHero = await fetchAPI("/projecthero", { populate: "*" });
+  const projectsRes = await fetchAPI("/projects", { populate: "*" });
 
   return {
     props: {
-      landing: landingRes?.data,
+      hero: projectsHero?.data,
+      projects: projectsRes?.data,
     },
     revalidate: 1,
   };

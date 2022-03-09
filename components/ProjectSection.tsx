@@ -1,47 +1,31 @@
 /* eslint-disable @next/next/no-img-element */
 import { Columns, Heading, Section } from "react-bulma-components";
+import { singleProjectAttributes } from "types/types";
 const { Column } = Columns;
 
-const mockup: { name: string; description: string; image: string }[] = [
-  {
-    name: "7 Seas Sailing School Website",
-    description:
-      " lorem impsumlorem impsum lorem impsumlorem impsumlorem impsum lorem impsumlorem impsumlorem impsum lorem impsumlorem impsumlorem impsum lorem impsum ",
-    image: "https://picsum.photos/500/300?random=5",
-  },
-  {
-    name: "7 Seas Sailing School Website",
-    description:
-      "lorem impsumlorem impsum lorem imlorem impsumlorem impsum lorem impsumlorem impsumlorem impsum lorem impsumlorem impsumlorem impsum lorem impsumpsum ",
-    image: "https://picsum.photos/500/300?random=2",
-  },
-  {
-    name: "7 Seas Sailing School Website",
-    description:
-      "lorem impsumlorem impsum lorlorem impsumlorem impsum lorem impsumlorem impsumlorem impsum lorem impsumem impsum ",
-    image: "https://picsum.photos/500/300?random=7",
-  },
-];
+interface Props {
+  projects: singleProjectAttributes[];
+}
 
-const ProjectSection = (): JSX.Element => {
+const ProjectSection = ({ projects }: Props): JSX.Element => {
   return (
     <>
       <Section mt={6} mb={6}>
-        {mockup.map(({ name, description, image }, i) => (
+        {projects.map((project, i) => (
           <Columns key={i} mt={6} mb={6}>
             <Column size={6}>
               <Heading subtitle className="has-text-white">
                 {" "}
-                {name}
+                {project.attributes.name}
               </Heading>
               <p className="has-text-white has-text-weight-light">
                 {" "}
-                {description}
+                {project.attributes.description}
               </p>
             </Column>
 
             <Column size={4}>
-              <img src={image} alt="" />
+              <img src={project.attributes.image} alt="" />
             </Column>
           </Columns>
         ))}

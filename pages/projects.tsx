@@ -1,6 +1,6 @@
 import HeroSection from "components/HeroSection";
 import { GetStaticProps } from "next/types";
-import { Section } from "react-bulma-components";
+import { Block, Section } from "react-bulma-components";
 import ProjectSection from "../components/ProjectSection";
 import Layout from "../components/_App/Layout";
 import { fetchAPI } from "../lib/api";
@@ -13,6 +13,7 @@ const Projects = (): JSX.Element => {
         subtitle="A selection of projects I've worked on."
         image={false}
       />
+
       <Section className="" mt={6}>
         <ProjectSection />
       </Section>

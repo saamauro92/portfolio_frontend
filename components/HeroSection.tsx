@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Columns, Heading, Hero } from "react-bulma-components";
 import SocialMedia from "./SocialMedia";
 
@@ -14,9 +15,9 @@ const HeroSection = ({ title, subtitle = "", image }: Props): JSX.Element => {
     <>
       <Hero mt={6} className="">
         <Hero.Body>
-          <Columns className=" is-vcentered">
+          <Columns className={image === true ? "is-vcentered" : " "}>
             <Column
-              className=""
+              className={image === true ? "" : "mt-6 "}
               desktop={{ size: 6 }}
               tablet={{ size: 0 }}
               mobile={{ size: 12 }}
@@ -31,7 +32,6 @@ const HeroSection = ({ title, subtitle = "", image }: Props): JSX.Element => {
               </Heading>
               <SocialMedia />
             </Column>
-
             <Column
               className=""
               desktop={{ size: 6 }}
@@ -40,10 +40,12 @@ const HeroSection = ({ title, subtitle = "", image }: Props): JSX.Element => {
             >
               {image ? (
                 <div className="image-container  ">
-                  <img src="/p_bgr.png" alt="" className="img-hero " />
+                  <img src="/p_bgr.png" alt="" />
                 </div>
               ) : (
-                <div className="space-container "></div>
+                <div className="space-container">
+                  <span className="space-span"> </span>
+                </div>
               )}
             </Column>
           </Columns>

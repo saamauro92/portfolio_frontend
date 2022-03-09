@@ -19,7 +19,13 @@ const SocialMedia = (): JSX.Element => (
   <>
     <Container>
       {links.map(({ Icon, href }, i) => (
-        <a key={i} target="_blank" href={href} className="mr-4">
+        <a
+          key={i}
+          target="_blank"
+          href={href}
+          className="mr-4"
+          rel="noreferrer"
+        >
           <i className={`${Icon} has-text-white`}> </i>
         </a>
       ))}

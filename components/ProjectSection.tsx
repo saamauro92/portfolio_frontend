@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { Columns, Heading, Section } from "react-bulma-components";
-
 const { Column } = Columns;
 
 const mockup: { name: string; description: string; image: string }[] = [
@@ -27,8 +27,8 @@ const ProjectSection = (): JSX.Element => {
   return (
     <>
       <Section paddingless className="is-large" mt={6}>
-        {mockup.map(({ name, description, image }) => (
-          <Columns>
+        {mockup.map(({ name, description, image }, i) => (
+          <Columns key={i}>
             <Column size={6}>
               <Heading subtitle className="has-text-white">
                 {" "}

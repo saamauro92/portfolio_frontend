@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Link from "next/link";
 import { Navbar } from "react-bulma-components";
+import { useRouter } from "next/router";
 
 const { Brand, Container, Menu, Burger } = Navbar;
 
@@ -22,7 +23,7 @@ const links: { name: string; href: string }[] = [
 
 const Header = (): JSX.Element => {
   const [navBarStatus, setActiveNavbar] = useState(false);
-  /*   const router = useRouter(); */
+  const router = useRouter();
 
   const handleActiveNavbar = () => {
     setActiveNavbar(!navBarStatus);
@@ -49,14 +50,20 @@ const Header = (): JSX.Element => {
 
           <Container align="right" paddingless>
             {links.map(({ name, href }) => (
-              <Link href={href} key={name} scroll={false}>
-                <a
-                  className="navbar-item mx-2 has-text-weight-medium has-text-white "
-                  onClick={() => setActiveNavbar(false)}
-                >
-                  {name}
-                </a>
-              </Link>
+              <>
+                <Link href={href} key={name} scroll={false}>
+                  <a
+                    className={
+                      router.pathname === href
+                        ? "navbar-item mx-2 has-text-weight-medium has-text-white is-underlined"
+                        : "navbar-item mx-2 has-text-weight-medium has-text-white"
+                    }
+                    onClick={() => setActiveNavbar(false)}
+                  >
+                    {name}
+                  </a>
+                </Link>
+              </>
             ))}
           </Container>
         </Menu>

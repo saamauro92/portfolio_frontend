@@ -12,7 +12,7 @@ const ContactSection = (): JSX.Element => {
     <>
       <Section mt={6} mb={6}>
         <Columns>
-          <Column desktop={{ size: 6 }} mobile={{ size: 12 }}>
+          <Column desktop={{ size: 8 }} mobile={{ size: 12 }}>
             <form>
               <Form.Field>
                 <Form.Label className="has-text-white">Name</Form.Label>

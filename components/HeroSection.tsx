@@ -15,23 +15,13 @@ const HeroSection = ({ title, subtitle = "", image }: Props): JSX.Element => {
     <>
       <Hero mt={6} className="">
         <Hero.Body>
-          <Columns className={image === true ? "is-vcentered" : " "}>
+          <Columns>
             <Column
-              className={image === true ? "" : "mt-6 "}
-              desktop={{ size: 6 }}
+              desktop={{ size: 8 }}
               tablet={{ size: 0 }}
               mobile={{ size: 12 }}
             >
-              <Heading
-                className={
-                  image === true
-                    ? "has-text-secondary  "
-                    : "has-text-secondary   mt-6 pt-5"
-                }
-              >
-                {" "}
-                {title}{" "}
-              </Heading>
+              <Heading className="has-text-secondary"> {title} </Heading>
               <Heading
                 mt={2}
                 subtitle

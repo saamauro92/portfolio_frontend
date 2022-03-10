@@ -3,15 +3,15 @@ import { Container } from "react-bulma-components";
 const links: { Icon: string; href: string }[] = [
   {
     Icon: "fab fa-github",
-    href: "https://github.com/",
+    href: "https://github.com/saamauro92",
   },
   {
     Icon: "fab fa-linkedin",
-    href: "https://www.linkedin.com/in/",
+    href: "https://www.linkedin.com/in/maurosaavedra/",
   },
   {
     Icon: "fab fa-instagram",
-    href: "https://www.linkedin.com/in/",
+    href: "https://www.instagram.com/saa.mauro/",
   },
 ];
 
@@ -23,10 +23,10 @@ const SocialMedia = (): JSX.Element => (
           key={i}
           target="_blank"
           href={href}
-          className="mr-4"
+          className="mr-5"
           rel="noreferrer"
         >
-          <i className={`${Icon} has-text-white`}> </i>
+          <i className={`${Icon} has-text-white `}> </i>
         </a>
       ))}
     </Container>

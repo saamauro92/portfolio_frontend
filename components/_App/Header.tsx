@@ -40,7 +40,7 @@ const Header = (): JSX.Element => {
         <Menu>
           <Link href="/" scroll={false}>
             <a
-              className="navbar-item mx-2 has-text-weight-medium has-text-white"
+              className="navbar-item mx-2 has-text-weight-medium has-text-white "
               onClick={() => setActiveNavbar(false)}
             >
               Mauro Saavedra

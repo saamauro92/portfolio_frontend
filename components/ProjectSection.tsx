@@ -13,7 +13,7 @@ const ProjectSection = ({ projects }: Props): JSX.Element => {
       <Section mt={6} mb={6}>
         {projects.map((project, i) => (
           <Columns key={i} mt={6} mb={6}>
-            <Column size={6}>
+            <Column size={4}>
               <Heading subtitle className="has-text-white">
                 {" "}
                 {project.attributes.name}

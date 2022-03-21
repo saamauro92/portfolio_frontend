@@ -38,6 +38,7 @@ export interface singleProjectAttributes {
         updatedAt: string;
         publishedAt:string;
         image:string;
+        url: string;
     }
 
 }

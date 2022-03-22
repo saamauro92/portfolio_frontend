@@ -28,54 +28,52 @@ const ProjectPageSection = ({
 }: Props): JSX.Element => {
   return (
     <>
-      <Hero mt={6}>
-        <Columns>
-          <Columns.Column
-            mt={6}
-            className="has-text-light has-text-weight-light"
-            desktop={{ offset: 3, size: 6 }}
-          >
-            <Heading className="has-text-secondary has-text-centered is-size-5-mobile">
-              {" "}
-              {title}{" "}
-            </Heading>
+      <Columns mt={6}>
+        <Columns.Column
+          mt={6}
+          className="has-text-light has-text-weight-light"
+          desktop={{ offset: 3, size: 6 }}
+        >
+          <Heading className="has-text-secondary has-text-centered is-size-5-mobile">
+            {" "}
+            {title}{" "}
+          </Heading>
 
-            <Content m={6}>
-              {image && <img src={image} alt="" />}
-              <ReactMarkdown>{description}</ReactMarkdown>
-            </Content>
+          <Content m={6}>
+            {image && <img src={image} alt="" />}
+            <ReactMarkdown>{description}</ReactMarkdown>
+          </Content>
 
-            <Level>
-              <Level.Item>
+          <Level>
+            <Level.Item>
+              <a
+                href={url}
+                target="_blank"
+                className="has-text-centered"
+                rel="noreferrer"
+              >
+                <Button className="is-success is-outlined"> View </Button>
+              </a>
+            </Level.Item>
+            <Level.Item m={6}>
+              {source === "no" ? (
+                <p className="has-text-centered ">
+                  Source code (not available)
+                </p>
+              ) : (
                 <a
-                  href={url}
+                  href={source}
                   target="_blank"
-                  className="has-text-centered"
+                  className="has-text-centered has-text-secondry is-underlined"
                   rel="noreferrer"
                 >
-                  <Button className="is-success is-outlined"> View </Button>
+                  Source Code
                 </a>
-              </Level.Item>
-              <Level.Item m={6}>
-                {source === "no" ? (
-                  <p className="has-text-centered ">
-                    Source code (not available)
-                  </p>
-                ) : (
-                  <a
-                    href={source}
-                    target="_blank"
-                    className="has-text-centered has-text-secondry is-underlined"
-                    rel="noreferrer"
-                  >
-                    Source Code
-                  </a>
-                )}
-              </Level.Item>
-            </Level>
-          </Columns.Column>
-        </Columns>
-      </Hero>
+              )}
+            </Level.Item>
+          </Level>
+        </Columns.Column>
+      </Columns>
     </>
   );
 };

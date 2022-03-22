@@ -28,11 +28,11 @@ const ProjectPageSection = ({
 }: Props): JSX.Element => {
   return (
     <>
-      <Columns mt={5}>
+      <Columns mt={5} className="is-centered">
         <Columns.Column
           mt={6}
-          className="has-text-light has-text-weight-light"
-          tablet={{ offset: 3, size: 6 }}
+          className="has-text-light has-text-weight-light is-half
+          "
         >
           <Heading className="has-text-secondary has-text-centered is-size-5-mobile">
             {" "}

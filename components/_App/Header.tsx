@@ -3,7 +3,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { Navbar } from "react-bulma-components";
 import { useRouter } from "next/router";
-
+import { route } from "next/dist/server/router";
+import { isActiveLink } from "../../lib/utils";
 const { Brand, Container, Menu, Burger } = Navbar;
 
 const links: { name: string; href: string }[] = [
@@ -12,8 +13,8 @@ const links: { name: string; href: string }[] = [
     href: "/",
   },
   {
-    name: "Projects",
-    href: "/projects",
+    name: "Portfolio",
+    href: "/portfolio",
   },
   {
     name: "Contact",
@@ -54,7 +55,7 @@ const Header = (): JSX.Element => {
                 <Link href={href} key={name} scroll={false}>
                   <a
                     className={
-                      router.pathname === href
+                      isActiveLink(href, router.pathname)
                         ? "navbar-item mx-2 has-text-weight-medium has-text-white is-underlined"
                         : "navbar-item mx-2 has-text-weight-medium has-text-white"
                     }

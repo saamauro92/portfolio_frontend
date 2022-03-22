@@ -28,7 +28,7 @@ const ProjectPageSection = ({
 }: Props): JSX.Element => {
   return (
     <>
-      <Columns mt={6}>
+      <Columns mt={5}>
         <Columns.Column
           mt={6}
           className="has-text-light has-text-weight-light"
@@ -39,7 +39,7 @@ const ProjectPageSection = ({
             {title}{" "}
           </Heading>
 
-          <Content m={6}>
+          <Content p={5}>
             {image && <img src={image} alt="" />}
             <ReactMarkdown>{description}</ReactMarkdown>
           </Content>
@@ -55,7 +55,7 @@ const ProjectPageSection = ({
                 <Button className="is-success is-outlined"> View </Button>
               </a>
             </Level.Item>
-            <Level.Item m={6}>
+            <Level.Item>
               {source === "no" ? (
                 <p className="has-text-centered ">
                   Source code (not available)

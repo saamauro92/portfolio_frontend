@@ -30,7 +30,10 @@ const ProjectPageSection = ({
     <>
       <Hero mt={6}>
         <Hero.Body className="is-flex is-flex-direction-column is-justify-content-center is-align-content-center  is-align-items-center has-text-left has-text-light has-text-weight-light">
-          <Heading className="has-text-secondary "> {title} </Heading>
+          <Heading className="has-text-secondary has-text-centered is-size-5-mobile">
+            {" "}
+            {title}{" "}
+          </Heading>
           <Content m={6}>
             <ReactMarkdown>{description}</ReactMarkdown>
           </Content>

@@ -32,9 +32,8 @@ const ProjectPageSection = ({
         <Columns>
           <Columns.Column
             mt={6}
-            offset={3}
-            size={6}
             className="has-text-light has-text-weight-light"
+            desktop={{ offset: 3, size: 6 }}
           >
             <Heading className="has-text-secondary has-text-centered is-size-5-mobile">
               {" "}

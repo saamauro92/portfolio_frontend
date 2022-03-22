@@ -29,46 +29,53 @@ const ProjectPageSection = ({
   return (
     <>
       <Hero mt={6}>
-        <Hero.Body className="is-flex is-flex-direction-column is-justify-content-center is-align-content-center  is-align-items-center has-text-left has-text-light has-text-weight-light">
-          <Heading className="has-text-secondary has-text-centered is-size-5-mobile">
-            {" "}
-            {title}{" "}
-          </Heading>
-          <Content m={6}>
-            <ReactMarkdown>{description}</ReactMarkdown>
-          </Content>
+        <Columns>
+          <Columns.Column
+            mt={6}
+            offset={3}
+            size={6}
+            className="has-text-light has-text-weight-light"
+          >
+            <Heading className="has-text-secondary has-text-centered is-size-5-mobile">
+              {" "}
+              {title}{" "}
+            </Heading>
 
-          <Level>
-            <Level.Item>
-              <a
-                href={url}
-                target="_blank"
-                className="has-text-centered"
-                rel="noreferrer"
-              >
-                <Button> View </Button>
-              </a>
-            </Level.Item>
-            <Level.Item m={6}>
-              {source === "no" ? (
-                <p className="has-text-centered ">
-                  Source code (not available)
-                </p>
-              ) : (
+            <Content m={6}>
+              {image && <img src={image} alt="" />}
+              <ReactMarkdown>{description}</ReactMarkdown>
+            </Content>
+
+            <Level>
+              <Level.Item>
                 <a
-                  href={source}
+                  href={url}
                   target="_blank"
-                  className="has-text-centered has-text-secondry"
+                  className="has-text-centered"
                   rel="noreferrer"
                 >
-                  Source Code
+                  <Button className="is-success is-outlined"> View </Button>
                 </a>
-              )}
-            </Level.Item>
-          </Level>
-
-          {image && <img src={image} alt="" />}
-        </Hero.Body>
+              </Level.Item>
+              <Level.Item m={6}>
+                {source === "no" ? (
+                  <p className="has-text-centered ">
+                    Source code (not available)
+                  </p>
+                ) : (
+                  <a
+                    href={source}
+                    target="_blank"
+                    className="has-text-centered has-text-secondry is-underlined"
+                    rel="noreferrer"
+                  >
+                    Source Code
+                  </a>
+                )}
+              </Level.Item>
+            </Level>
+          </Columns.Column>
+        </Columns>
       </Hero>
     </>
   );

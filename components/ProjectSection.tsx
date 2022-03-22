@@ -21,17 +21,17 @@ const ProjectSection = ({ projects }: Props): JSX.Element => {
       <Section mt={6} mb={6}>
         {projects.map((project, i) => (
           <Columns key={i} mt={6} mb={6}>
-            <Column size={4}>
+            <Column size={6}>
               <Heading subtitle className="has-text-white">
                 {project.attributes.name}
               </Heading>
 
-              <p className="has-text-white has-text-weight-light">
+              <p className="has-text-white has-text-weight-light mb-5">
                 {project.attributes.description}
               </p>
 
               <Link href={`/portfolio/${project.attributes.slug}`} passHref>
-                <Button mt={5}> Read more </Button>
+                <a className="has-text-secondary is-underlined"> Read more </a>
               </Link>
             </Column>
 

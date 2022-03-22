@@ -39,6 +39,9 @@ export interface singleProjectAttributes {
         publishedAt:string;
         image:string;
         url: string;
+        source: string;
+        slug: string;
+        long_description:string;
     }
 
 }

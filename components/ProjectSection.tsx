@@ -1,5 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button, Columns, Heading, Section } from "react-bulma-components";
+import Link from "next/link";
+import {
+  Block,
+  Button,
+  Columns,
+  Heading,
+  Level,
+  Section,
+} from "react-bulma-components";
 import { singleProjectAttributes } from "types/types";
 const { Column } = Columns;
 
@@ -15,16 +23,16 @@ const ProjectSection = ({ projects }: Props): JSX.Element => {
           <Columns key={i} mt={6} mb={6}>
             <Column size={4}>
               <Heading subtitle className="has-text-white">
-                {" "}
                 {project.attributes.name}
               </Heading>
+
               <p className="has-text-white has-text-weight-light">
-                {" "}
                 {project.attributes.description}
               </p>
-              <a href={project.attributes.url} target="_blank" rel="noreferrer">
-                <Button mt={5}> VIEW </Button>
-              </a>
+
+              <Link href={`/portfolio/${project.attributes.slug}`} passHref>
+                <Button mt={5}> Read more </Button>
+              </Link>
             </Column>
 
             <Column size={4}>

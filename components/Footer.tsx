@@ -7,7 +7,16 @@ const FooterSection = (): JSX.Element => {
         <footer>
           <p className="has-text-centered has-text-white has-text-weight-light">
             Written using the ReactJS framework NextJS with Typescript, Bulma
-            Css and Strapi as CMS. See Code.
+            Css and Strapi as CMS.
+            <a
+              className="has-text-secondary"
+              href="https://github.com/saamauro92/portfolio_frontend"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              Source Code
+            </a>
           </p>
         </footer>
       </Section>

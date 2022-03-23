@@ -21,7 +21,8 @@ const ProjectPage = ({ project }: Props): JSX.Element => {
         <ProjectPageSection
           title={project.attributes.name}
           image={project.attributes.image}
-          description={project.attributes.long_description}
+          description={project.attributes.description}
+          long_description={project.attributes.long_description}
           url={project.attributes.url}
           source={project.attributes.source}
         />

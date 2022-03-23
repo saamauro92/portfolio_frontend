@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import {
+  Block,
   Button,
   Columns,
+  Container,
   Content,
   Heading,
   Hero,
   Level,
+  Section,
 } from "react-bulma-components";
 import ReactMarkdown from "react-markdown";
 
@@ -14,9 +17,10 @@ const { Column } = Columns;
 interface Props {
   title: string;
   image?: string;
-  description: string;
+  description?: string;
   url: string;
   source: string;
+  long_description?: string;
 }
 
 const ProjectPageSection = ({
@@ -25,23 +29,26 @@ const ProjectPageSection = ({
   description = "",
   url,
   source,
+  long_description = "",
 }: Props): JSX.Element => {
   return (
     <>
-      <Columns mt={5} className="is-centered">
-        <Columns.Column
-          mt={6}
-          className="has-text-light has-text-weight-light is-half
-          "
-        >
+      <Section className="is-medium">
+        <Container className="has-text-light has-text-weight-light is-max-desktop ">
           <Heading className="has-text-secondary has-text-centered is-size-5-mobile">
             {" "}
             {title}{" "}
           </Heading>
 
           <Content p={5}>
-            {image && <img src={image} alt="" />}
             <ReactMarkdown>{description}</ReactMarkdown>
+            {image && (
+              <>
+                <img src={image} alt="" className="mt-5" />
+                <p className="has-text-centered mb-6 ">The Homepage</p>
+              </>
+            )}
+            <ReactMarkdown>{long_description}</ReactMarkdown>
           </Content>
 
           <Level>
@@ -72,8 +79,8 @@ const ProjectPageSection = ({
               )}
             </Level.Item>
           </Level>
-        </Columns.Column>
-      </Columns>
+        </Container>
+      </Section>
     </>
   );
 };

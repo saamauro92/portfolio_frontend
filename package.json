@@ -12,8 +12,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.5.0",
     "@types/qs": "^6.9.7",
     "bulma": "^0.9.3",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^6.2.8",
     "next": "12.1.0",
     "qs": "^6.10.3",

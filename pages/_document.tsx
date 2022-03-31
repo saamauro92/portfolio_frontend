@@ -2,6 +2,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   render(): JSX.Element {
+    const GA_MEASUREMENT_ID = "G-S47CDXVRF6";
     return (
       <Html lang="en">
         <Head>
@@ -30,6 +31,24 @@ class MyDocument extends Document {
             src="https://kit.fontawesome.com/7b8f9cbbbf.js"
             crossOrigin="anonymous"
           ></script>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          />
+          <script
+            async
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', '${GA_MEASUREMENT_ID}', {
+                            page_path: window.location.pathname,
+                        });
+                        `,
+            }}
+          />
         </Head>
         <body>
           <Main />

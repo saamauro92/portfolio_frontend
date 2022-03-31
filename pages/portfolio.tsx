@@ -12,7 +12,10 @@ interface Props {
 
 const Projects = ({ hero, projects }: Props): JSX.Element => {
   return (
-    <Layout>
+    <Layout
+      title="Portfolio"
+      description="A selection of projects I've worked on."
+    >
       <HeroSection
         title={hero.attributes.title}
         subtitle={hero.attributes.subtitle}

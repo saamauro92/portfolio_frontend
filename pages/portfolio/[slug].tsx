@@ -17,7 +17,10 @@ type Props = {
 const ProjectPage = ({ project }: Props): JSX.Element => {
   return (
     <>
-      <Layout>
+      <Layout
+        title={project.attributes.name}
+        description={project.attributes.description}
+      >
         <ProjectPageSection
           title={project.attributes.name}
           image={project.attributes.image}

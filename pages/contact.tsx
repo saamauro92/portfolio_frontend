@@ -8,7 +8,7 @@ import { fetchAPI } from "../lib/api";
 
 const Contact = (): JSX.Element => {
   return (
-    <Layout>
+    <Layout title="Contact" description="Send message to mauro saavedra">
       <HeroSection title="Contact" subtitle="Send me message" image={false} />
 
       <ContactSection />

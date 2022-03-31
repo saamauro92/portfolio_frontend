@@ -59,7 +59,7 @@ const ProjectPageSection = ({
             </Level.Item>
             <Level.Item>
               {source === "no" ? (
-                <p className="has-text-centered ">
+                <p className="has-text-centered m-5 ">
                   Source code (not available)
                 </p>
               ) : (

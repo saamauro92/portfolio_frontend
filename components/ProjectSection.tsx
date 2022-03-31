@@ -18,7 +18,7 @@ interface Props {
 const ProjectSection = ({ projects }: Props): JSX.Element => {
   return (
     <>
-      <Section mt={6} mb={6}>
+      <Section mt={6}>
         {projects.map((project, i) => (
           <Columns key={i} mt={6} mb={6}>
             <Column size={6}>

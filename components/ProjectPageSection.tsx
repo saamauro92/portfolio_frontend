@@ -1,18 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import {
-  Block,
   Button,
-  Columns,
   Container,
   Content,
   Heading,
-  Hero,
   Level,
   Section,
 } from "react-bulma-components";
 import ReactMarkdown from "react-markdown";
-
-const { Column } = Columns;
 
 interface Props {
   title: string;
@@ -71,7 +66,7 @@ const ProjectPageSection = ({
                 <a
                   href={source}
                   target="_blank"
-                  className="has-text-centered has-text-secondry is-underlined"
+                  className="has-text-centered has-text-secondry is-underlined m-5"
                   rel="noreferrer"
                 >
                   Source Code
